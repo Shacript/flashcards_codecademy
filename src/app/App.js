@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   NavLink,
+  Navigate
 } from "react-router-dom";
 import NewQuizForm from "../components/NewQuizForm";
 import NewTopicForm from "../components/NewTopicForm";
@@ -46,6 +47,7 @@ export default function App() {
       </nav>
 
       <Routes>
+        <Route exact path="/" element={<Navigate to={ROUTES.topicsRoute()} />} />
         <Route path="topics/*" element={<TopicsRoutes />}></Route>
         <Route path="quizzes/*" element={<QuizRoutes />}></Route>
       </Routes>
